@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            buildConfigField 'String', 'BASE_URL', "\"http://www.energy-link.com.cn/\"";
+            buildConfigField 'String', 'API_URL', "\"dlpmobile/mobile/\"";
+            buildConfigField 'String', 'UPLOAD_FILE_URL', "\"dlpfilesystem/utils/imageService/\"";
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField 'String', 'BASE_URL', "\"http://172.16.17.152:8080/\"";
+            buildConfigField 'String', 'API_URL', "\"dlpmobile/mobile/\"";
+            buildConfigField 'String', 'UPLOAD_FILE_URL', "\"dlpfilesystem/utils/imageService/\"";
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        devTest{
+            buildConfigField 'String', 'BASE_URL', "\"http://172.16.17.152:8080/\"";
+            buildConfigField 'String', 'API_URL', "\"dlpmobile/mobile/\"";
+            buildConfigField 'String', 'UPLOAD_FILE_URL', "\"dlpfilesystem/utils/imageService/\"";
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api project(path: ':commonlib')
+}

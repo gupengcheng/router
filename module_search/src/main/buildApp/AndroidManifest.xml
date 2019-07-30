@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.module_search">
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity android:name="com.module_search.SimpleActivity"/>
+    </application>
+</manifest>

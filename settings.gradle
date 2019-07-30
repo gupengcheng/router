@@ -1,0 +1,1 @@
+include ':app', ':arouterlib', ':commonlib', ':baseproject', ':module_home', ':module_search'
