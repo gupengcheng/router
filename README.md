@@ -1,5 +1,30 @@
 # router
 阿里ARouter开源组件化框架项目实践demo
+
+# How to
+To get a Git project into your build:
+
+**Step 1.** Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+**Step 2.** Add the dependency
+
+```
+dependencies {
+	        implementation 'com.github.wellkong:router:V1.0.0'
+	}
+```
+
 # 前言
 做了几个项目的实践，体验到了产品经理的无限添加功能导致我们的项目工程越来越臃肿，这是我们前期的框架设计不好。所以组件化的框架开发是必须的了，各个功能模块都可以分开开发。App模块化的目标是告别结构臃肿，让各个业务变得相对独立，业务模块在组件模式下可以独立开发，而在集成模式下又可以变为依赖包集成到“app壳工程”中，组成一个完整功能的APP。所以下面我们就阿里的ARouter开源组件化框架搭建我们的项目。
 ## 一、模块化开发的好处
